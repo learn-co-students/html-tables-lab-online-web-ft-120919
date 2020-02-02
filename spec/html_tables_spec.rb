@@ -1,4 +1,4 @@
-require 'pry'
+#require 'pry'
 
 RSpec.describe 'index.html' do
   it 'contains a <table> with five rows' do
@@ -15,9 +15,9 @@ RSpec.describe 'index.html' do
   it 'contains a <table> with the correct headers' do
     headers = parsed_html.search('table > tr').first
 
-    expect(headers.children[0].children[0].text).to eq("City")
-    expect(headers.children[2].children[0].text).to eq("State")
-    expect(headers.children[4].children[0].text).to eq("2017 estimate")
+    expect(headers.children[0].text).to eq("City")
+    expect(headers.children[2].text).to eq("State")
+    expect(headers.children[4].text).to eq("2017 estimate")
   end
 
   it 'contains the correct information about New York City' do
